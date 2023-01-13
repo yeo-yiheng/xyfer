@@ -1,0 +1,137 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+body {
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+    background: url('../assets/login-bg.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.bank-header {
+    font-size: 64px;
+}
+
+.navbar {
+    position: absolute;
+    top: 0px;
+    width: 100vw;
+    height: 100px;
+    padding: 0px;
+    background-color: rgb(	59, 107, 231);
+    border-radius: 0px 0px 24px 24px;
+    padding-inline: 50px;
+}
+
+.navbar-wrapper-clean {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.since-date {
+    align-self: flex-end;
+    font-size: 24px;
+}
+
+.background-wrapper {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mask {
+    width: 90vw;
+    height: 70vh;
+    background-color: rgba(255, 255, 255, 0.6);
+    border-radius: 24px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.image-wrapper {
+    background-color: white;
+    height: 80%;
+    border-radius: 24px;
+    padding: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 64px;
+    max-width: 750px;
+}
+
+.cartoon-img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.tagline {
+    font-size: 48px;
+    color: gray;
+}
+
+.login-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.field {
+    width: 450px;
+    height: 50px;
+    background-color: rgb(200, 200, 200);
+    padding-inline-start: 24px;
+    margin-bottom: 10px;
+}
+
+.forget-password-cta {
+    align-self: start;
+}
+
+.forget-password-cta:hover {
+    color: rgb(59, 107, 231);
+}
+
+.visibility-icon {
+    width: 50px;
+    height: 50px;
+    position: inherit;
+}
+
+.sign-up-cta {
+    align-self: start;
+    justify-self: end;
+}
+
+.blue-span-text {
+    color: rgb(	59, 107, 231);
+}
