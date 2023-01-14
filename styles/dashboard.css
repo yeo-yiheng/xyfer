@@ -1,0 +1,29 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar {
+    position: absolute;
+    top: 0px;
+    width: 100vw;
+    height: 100px;
+    padding: 0px;
+    background-color: rgb(	59, 107, 231);
+    border-radius: 0px 0px 24px 24px;
+    padding-inline: 50px;
+}

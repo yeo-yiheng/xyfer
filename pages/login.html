@@ -1,21 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <title>Xyfer</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="viewport" content="height=device-height, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@400;700;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="../styles/login.css">
-        <style>
-            body {
-                font-family: 'Blinker', sans-serif;
-            }
-    
-            /* width 
+
+<head>
+    <meta charset="UTF-8">
+    <title>Xyfer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="height=device-height, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@400;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/login.css">
+    <style>
+        body {
+            font-family: 'Blinker', sans-serif;
+        }
+
+        /* width 
             ::-webkit-scrollbar {
                 width: 5px;
             }
@@ -34,60 +36,67 @@
             ::-webkit-scrollbar-thumb:hover {
                 background: gray;
             } */
-        </style>
-        <!-- placeholder image used -->
-        <link rel="icon" type="image/x-icon" href="assets/Logo.png">
-    </head>
-    
-    <body>
-        <div class="background-wrapper">
-            <div class="navbar">
-                <div class="navbar-wrapper-clean">
-                    <h1 class="bank-header">RTG Bank</h1>
-                    <h3 class="since-date">Since 1999</h3>
-                </div>
-            </div>
-            <div class="mask">
-                <div class="image-wrapper">
-                    <h2 class="tagline">Around the clock, around the globe</h2>
-                    <img src="../assets/cartoon-sketch-trimmed.png" alt="cartoon sketch" class="cartoon-img">
-                </div>
-                <div class="login-wrapper">
-                    <div class="field-wrapper">
-                        <input class="field" type="text" placeholder="Email or phone number" name="username" required>  
-                    </div>
-                    <div class="field-wrapper">
-                        <input class="field" type="password" placeholder="Password" name="password" required>
-                        <!-- <a href=""><img src="../assets/visibility-icon.png" alt="" class="visibility-icon">  </a> -->
-                    </div>
-                    <a href="" class="forget-password-cta"><p>Forgot Password?</p></a>
-                    <div class="d-grid gap-2 col-12 mx-auto">
-                        <button class="btn btn-primary" type="button">Login</button>
-                    </div>
-                    <p class="sign-up-cta">Don't have an account? <a href=""><span class="blue-span-text">Sign up!</span></a></p>
-                </div>
+    </style>
+    <!-- placeholder image used -->
+    <link rel="icon" type="image/x-icon" href="assets/Logo.png">
+</head>
+
+<body>
+    <div class="background-wrapper">
+        <div class="navbar">
+            <div class="navbar-wrapper-clean">
+                <h1 class="bank-header">RTG Bank</h1>
+                <h3 class="since-date">Since 1999</h3>
             </div>
         </div>
-        <script src="script.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-        <script>
-            const swiper = new Swiper('.swiper', {
-                autoplay: {
-                    delay: 3000,
-                    disableOnInteraction: false,
-                },
-                loop: true,
-    
-                pagination: {
-                    el: '.swiper-pagination',
-                    clickable: true,
-                },
-    
-                navigation: {
-                    nextEl: '.swiper-button-next',
-                    prevEl: '.swiper-button-prev',
-                }
-            });
-        </script>
-    </body>
+        <div class="mask">
+            <div class="image-wrapper">
+                <h2 class="tagline">Around the clock, around the globe</h2>
+                <img src="../assets/cartoon-sketch-trimmed.png" alt="cartoon sketch" class="cartoon-img">
+            </div>
+            <div class="login-wrapper">
+                <div class="field-wrapper">
+                    <input class="field" type="text" placeholder="Email or phone number" name="username" required>
+                </div>
+                <div class="field-wrapper">
+                    <input class="field" type="password" placeholder="Password" name="password" required>
+                    <!-- <a href=""><img src="../assets/visibility-icon.png" alt="" class="visibility-icon">  </a> -->
+                </div>
+                <a href="" class="forget-password-cta">
+                    <p>Forgot Password?</p>
+                </a>
+                <a href="../pages/dashboard.html" class="login-button-wrapper">
+                    <button class="login-button" type="button">Login</button>
+                </a>
+                    <!-- <div class="d-grid gap-2 col-12 mx-auto">
+                        <button class="btn btn-primary" type="button">Login</button>
+                    </div> -->
+                <p class="sign-up-cta">Don't have an account? <a href=""><span class="blue-span-text">Sign
+                            up!</span></a></p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            autoplay: {
+                delay: 3000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            }
+        });
+    </script>
+</body>
+
 </html>
