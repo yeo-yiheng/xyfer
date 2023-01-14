@@ -9,7 +9,12 @@ html {
 }
 
 li {
-    list-style: none;
+    list-style: none; 
+}
+
+li.nav-item {
+    float:left;
+    padding: 20px;
 }
 
 a {
@@ -22,6 +27,32 @@ a {
     top: 0px;
     width: 100vw;
     height: 100px;
+    padding: 0px;
+    background-color: rgb(	59, 107, 231);
+    border-radius: 0px 0px 24px 24px;
+    padding-inline: 50px;
+}
+
+a {
+    color:white;
+    font-size: 64px;
+}
+
+.navbar > .nav_options_icons > .nav-menu > .nav-item > .nav-link {
+    color:white;
+    font-size: 24px;
+}
+
+.navbar > .nav_options_icons > .nav-menu> .nav-item> .active {
+    color: white;
+    text-decoration-line: underline;
+    font-size: 24px;
+}
+
+.navbar > .nav_options_icons >.nav-menu > .nav-item > {
+    position: fixed;
+    left: 30px;
+    height: 10px;
     padding: 0px;
     background-color: rgb(	59, 107, 231);
     border-radius: 0px 0px 24px 24px;
