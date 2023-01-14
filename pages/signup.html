@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@400;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="../styles/signup.css">
     <style>
         body {
             font-family: 'Blinker', sans-serif;
@@ -54,29 +54,20 @@
                 <img src="../assets/cartoon-sketch-trimmed.png" alt="cartoon sketch" class="cartoon-img">
             </div>
             <div class="login-wrapper">
-                <button class="temp-clear-button">Clear DB</button>
+                <h2 class="register-desc">Register your account!</h2>
                 <div class="field-wrapper">
-                    <input id="username" class="field" type="text" placeholder="Email or phone number" name="username" required>
+                    <input id="username" class="field" type="text" placeholder="Email or phone number" name="username"
+                        required>
                 </div>
                 <div class="field-wrapper">
                     <input id="password" class="field" type="password" placeholder="Password" name="password" required>
                     <!-- <a href=""><img src="../assets/visibility-icon.png" alt="" class="visibility-icon">  </a> -->
                 </div>
-                <a href="" class="forget-password-cta">
-                    <p>Forgot Password?</p>
-                </a>
-                <!-- <a href="../pages/dashboard.html" class="login-button-wrapper"> -->
-                    <button class="login-button" type="button">Login</button>
-                <!-- </a> -->
-                    <!-- <div class="d-grid gap-2 col-12 mx-auto">
-                        <button class="btn btn-primary" type="button">Login</button>
-                    </div> -->
-                <p class="sign-up-cta">Don't have an account? <a href="../pages/signup.html"><span class="blue-span-text">Sign
-                            up!</span></a></p>
+                <button class="register-button" type="button">Register</button>
             </div>
         </div>
     </div>
-    <script src="../scripts/login.js"></script>
+    <script src="../scripts/signup.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
     <script>
         const swiper = new Swiper('.swiper', {
