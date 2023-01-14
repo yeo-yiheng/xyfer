@@ -21,7 +21,7 @@ body {
     overflow-x: hidden;
     width: 100vw;
     height: 100vh;
-    background: url('../assets/login-bg.jpg') no-repeat center center fixed;
+        background: url('../assets/login-bg.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -144,3 +144,6 @@ body {
 .blue-span-text {
     color: rgb(59, 107, 231);
 }
+
+
+
