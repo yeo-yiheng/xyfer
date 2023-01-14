@@ -1,5 +1,4 @@
-const submitButton = document.querySelector(".login-button");
-
+const submitButton = document.querySelector(".register-button");
 let cache = window.localStorage;
 const accountsKey = "accsystem";
 
@@ -10,12 +9,6 @@ if (cache.getItem(accountsKey) === null) {
     cache.setItem(accountsKey, JSON.stringify(accounts));
 }
 
-const clearButton = document.querySelector(".temp-clear-button");
-clearButton.addEventListener("click", (event) => {
-    cache.removeItem(accountsKey);    
-    location.reload();
-})
-
 submitButton.addEventListener("click", (event) => {
     const usernameInput = document.getElementById("username").value;
     const passwordInput = document.getElementById("password").value;
@@ -23,16 +16,15 @@ submitButton.addEventListener("click", (event) => {
         alert("Username or Password cannot be blank!");
     } else {
         let userdb = JSON.parse(cache.getItem(accountsKey));
-        if (userdb[usernameInput] === undefined) {
-            alert("No such user!");
-        } else if (userdb[usernameInput] !== passwordInput) {
-            console.log(userdb);
-            alert("Wrong password!");
+        if (userdb[usernameInput] !== undefined) {
+            alert("User already exists!");
+        } else if (passwordInput.length < 8) {
+            alert("Password has to be at least 8 characters long!");
         } else {
-            // Allow login and load details
-            window.location.href = "../pages/dashboard.html";
+            userdb[usernameInput] = passwordInput;
+            cache.setItem(accountsKey, JSON.stringify(userdb));
+            window.location.href = "../pages/login.html";
         }
     }
 });
-
 

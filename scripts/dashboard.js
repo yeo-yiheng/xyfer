@@ -1,0 +1,1 @@
+const cache = window.localStorage;
