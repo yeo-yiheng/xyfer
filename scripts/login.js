@@ -1,6 +1,7 @@
 const submitButton = document.querySelector(".login-button");
 
 let cache = window.localStorage;
+const currentUserKey = "currentuser";
 const accountsKey = "accsystem";
 
 if (cache.getItem(accountsKey) === null) {
@@ -30,6 +31,7 @@ submitButton.addEventListener("click", (event) => {
             alert("Wrong password!");
         } else {
             // Allow login and load details
+            cache.setItem(currentUserKey, usernameInput);
             window.location.href = "../pages/dashboard.html";
         }
     }
