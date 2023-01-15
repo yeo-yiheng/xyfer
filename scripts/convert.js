@@ -5,12 +5,15 @@ let data;
 let toField = document.querySelector(".to-input");
 let fieldArr = document.querySelector(".from-input");
 let transferButton = document.querySelector(".transfer-button");
+const cache = window.localStorage;
+const currentUserDetailKey = "currentuserdetail";
+const currentUserKey = "currentuser";
+const destKey = "destination";
+const whitelistKey = "whitelisted";
 
 fetch(`https://api.currencyapi.com/v3/latest?apikey=${appId}`, {
     method: 'GET',
-    headers: {
-
-    },
+    headers: {},
 })
 .then(response => response.text())
 .then(text => {
@@ -41,6 +44,8 @@ let toValue;
 let fromRate;
 let toRate;
 let sendAmount = 0;
+let finalValue = 0;
+
 forms.forEach(form => {
     form.addEventListener("change", (event) => {
         const chosen = event.target.value;
@@ -74,7 +79,7 @@ forms.forEach(form => {
             exchangeElement.innerHTML = `Exchange Rate: ${division} ${toValue} per 1 ${fromValue}`;
             if (fieldArr.value !== undefined) {
                 let currInput = fieldArr.value;
-                let finalValue = (toRate / fromRate) * currInput;
+                finalValue = (toRate / fromRate) * currInput;
                 toField.placeholder = finalValue;
             }
         }
@@ -89,21 +94,41 @@ fieldArr.addEventListener("input", (event) => {
         event.target.value = "";
     }
     if (fromChosen && toChosen) {
-        let finalValue = (toRate / fromRate) * currInput;
+        finalValue = (toRate / fromRate) * currInput;
         toField.placeholder = finalValue;
     }
 });
 
 transferButton.addEventListener("click", e => {
-    let balance = 1000;
+    const currUserDetails = JSON.parse(cache.getItem(currentUserDetailKey)); 
+    let balance = currUserDetails.account_state.acc1.Balance;
+    balance = balance.replace("$", "");
+    balance = parseFloat(balance).toFixed(2);
     if (sendAmount > balance) {
         alert("Insufficient Funds!");
     } else {
-        // Store balance - sendAmount back into local cache of current user account balance
-        // Update other user account balance + sendAmount
-        // Replace alert with transaction page
-        alert("Transfer successful!");
+        balance -= sendAmount;
+        currUserDetails.account_state.acc1.Balance = "$" + balance;
+        let currUser = cache.getItem(currentUserKey);
+        const userDetailsWrapper = JSON.parse(cache.getItem(currUser));
+        userDetailsWrapper.account_state.acc1.Balance = "$" + balance;
+        cache.setItem(currUser, JSON.stringify(userDetailsWrapper));
+        cache.setItem(currentUserDetailKey, JSON.stringify(currUserDetails));
+        let dest = cache.getItem(destKey);
+        let target;
+        let whitelistArr = JSON.parse(cache.getItem(whitelistKey));
+        for (let name in whitelistArr) {
+            if (whitelistArr[name] === dest) {
+                target = name;
+                break;
+            }
+        }
+        let targetDetailsArr = JSON.parse(cache.getItem(target));
+        let receiverBalance = targetDetailsArr.account_state.acc1.Balance;
+        receiverBalance = receiverBalance.replace("$", "");
+        receiverBalance = (parseFloat(receiverBalance) + finalValue).toFixed(2);
+        targetDetailsArr.account_state.acc1.Balance = "$" + receiverBalance;
+        cache.setItem(target, JSON.stringify(targetDetailsArr));
         window.location.href = "../pages/success.html";
     }
-})
-
+});

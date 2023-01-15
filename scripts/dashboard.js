@@ -6,7 +6,7 @@ userHtml.innerHTML = currentUser;
 
 const userDetailsWrapper = JSON.parse(cache.getItem(currentUser));
 const userDetails = userDetailsWrapper["account_state"];
-
+    
 for (let account in userDetails) {
     const currAcc = userDetails[account];
     const name = currAcc["Name"];

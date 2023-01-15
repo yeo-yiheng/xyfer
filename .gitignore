@@ -1,2 +1,5 @@
 pages/Transactionpage.html
 styles/transactionpage.css
+node_modules/
+package-lock.json
+package.json

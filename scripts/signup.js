@@ -1,10 +1,17 @@
 const submitButton = document.querySelector(".register-button");
 let cache = window.localStorage;
 const accountsKey = "accsystem";
-// let Web3 = require("web3");
-// let web3 = new Web3('ws://localhost:8546');
-// let account = web3.eth.accounts.create();
-// console.log(account);
+const whitelistKey = "whitelisted";
+let newAddress;
+
+$.ajax({
+    type: 'get',
+    async: false,
+    url: 'http://localhost:3000',
+    success: function (data) {
+        newAddress = data;
+    }
+});
 
 const userDefaultAccounts = {
     account_state : { 
@@ -15,7 +22,7 @@ const userDefaultAccounts = {
         }, 
         acc2 : {
             Name : "eWallet 1",
-            Account : "0x690b9a9e9aa1c9db991c7721a92d351db4fac990", 
+            Account : `${newAddress}`, 
             Balance : "500 USDT",
         }, 
         acc3 : {
@@ -33,6 +40,13 @@ if (cache.getItem(accountsKey) === null) {
     cache.setItem(accountsKey, JSON.stringify(accounts));
 }
 
+if (cache.getItem(whitelistKey) === null) {
+    const addresses = {
+        username : `0x0000000000000000000000000000000000000000`
+    };
+    cache.setItem(whitelistKey, JSON.stringify(addresses));
+}
+
 submitButton.addEventListener("click", (event) => {
     const usernameInput = document.getElementById("username").value;
     const passwordInput = document.getElementById("password").value;
@@ -48,6 +62,9 @@ submitButton.addEventListener("click", (event) => {
             userdb[usernameInput] = passwordInput;
             cache.setItem(accountsKey, JSON.stringify(userdb));
             cache.setItem(usernameInput, JSON.stringify(userDefaultAccounts));
+            let whitelistedDb = JSON.parse(cache.getItem(whitelistKey));
+            whitelistedDb[usernameInput] = newAddress;
+            cache.setItem(whitelistKey, JSON.stringify(whitelistedDb));
             window.location.href = "../pages/login.html";
         }
     }
