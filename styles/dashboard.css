@@ -90,10 +90,24 @@ a {
 
 .account-details-wrapper {
     font-size: 24px;
+<<<<<<< HEAD
     display: flex;
     justify-content: space-between;
     align-items: center;
     gap: 30px;
+=======
+
+} 
+
+
+.footer-wrapper{
+    position: relative;
+    left: 0px;
+    top: 500px; 
+    font-size: 24px;
+    background-color: rgb(149, 150, 153);
+    border: 3px solid rgb(149, 150, 153);
+>>>>>>> 3ceea34 (most updated webpages 7:44pm)
 }
 
 .footer-wrapper {

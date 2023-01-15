@@ -1,0 +1,95 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+}
+
+h2 {
+    float: left;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display:flex;   
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.navbar {
+    position: absolute;
+    top: 0px;
+    display:flex;
+    width: 100vw;
+    height: 100px;
+    background-color: rgb(	59, 107, 231);
+    border-radius: 0px 0px 24px 24px;
+    padding-inline: 50px;
+}
+
+
+.navbar-name {
+    font-size: 64px;
+    color:white;
+    float:left;
+}
+
+.mask {
+    border-bottom: 2px solid rgb(127, 127, 127);
+    border-left:  2px solid rgb(127, 127, 127);
+    border-right:  2px solid rgb(127, 127, 127);
+    width: 50vw;
+    border-radius: 0px 0px 24px 24px;
+}
+
+.mask-header {
+    border-radius: 24px 24px 0px 0px;
+    background-color: rgb(59, 107, 231);
+    color:white;
+    width: 50vw;
+    height: 50px;
+    border: 2px solid rgb(127, 127, 127);
+}
+
+.row-details {
+    height:100px;
+    padding:20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.transfer-details {
+    background-color: rgb(222, 214, 214);
+    padding-inline: 20px;
+    padding-block: 10px;
+    border-radius: 16px;
+    width: 65%;
+}
+
+.links {
+    color:black;
+    text-decoration: underline;
+}
+
+.clickables > ul > li:first-child {
+    border-top: 1px solid black;
+    padding-block-start: 10px;
+}
+
+.clickables > ul > li {
+    padding-inline-start: 20px;
+}
+
+.clickables > ul {
+    padding-left: 0px !important;
+}

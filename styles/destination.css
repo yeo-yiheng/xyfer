@@ -1,0 +1,102 @@
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display:flex;   
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.navbar {
+    position: absolute;
+    top: 0px;
+    display:flex;
+    width: 100vw;
+    height: 100px;
+    background-color: rgb(	59, 107, 231);
+    border-radius: 0px 0px 24px 24px;
+    padding-inline: 50px;
+}
+
+.navbar-name {
+    font-size: 64px;
+    color:white;
+}
+
+.account-details-wrapper {
+    position:static;
+    border-radius: 25px;
+    display:flex;
+    flex-direction: column;
+    align-self: center;
+    top: 100px;
+    width: 70vw;
+    box-shadow: 0px 10px 5px;
+}
+
+.mask-header {
+    position: relative;
+    border-radius: 20px 20px 0px 0px;
+    background-color: rgb(	59, 107, 231);
+    color:white;
+    padding:10px;
+    border: 2px solid rgb(127, 127, 127);
+}
+
+.bank-account-text {
+    display:inline-flex;
+    align-items: center;
+    padding:10px;
+    float: left;
+}
+
+.bank-account-input {
+    background-color: rgb(182, 182, 182);
+    margin: 0;
+    position:relative;
+    top: 30px;
+    right: 50px;
+    width: 50vw;
+    float: right;
+    border: 2px solid rgb(182, 182, 182);
+}
+
+.top-space-filler{
+    height:50px;
+}
+
+.transfer-details {
+    border-bottom: 2px solid rgb(127, 127, 127);
+    border-left:  2px solid rgb(127, 127, 127);
+    border-right:  2px solid rgb(127, 127, 127);
+    border-radius: 0px 0px 20px 20px;
+}
+
+.next-button {
+    background-color: rgb(59, 107, 231);
+    color:white;
+    height:40px;
+    width: 300px;
+    border: 2px solid rgb(182, 182, 182);
+    border-radius: 10px;
+    box-shadow: 0px 10px 5px rgba(0, 0, 0, 0.4);
+    font-size: 24px;
+}
+
+.next-button:hover {
+    background-color: rgb(89, 129, 230);
+    color:white;
+    cursor:pointer;
+    box-shadow: 0px 10px 5px rgba(81, 119, 216, 0.4);
+}

@@ -21,7 +21,7 @@ body {
     overflow-x: hidden;
     width: 100vw;
     height: 100vh;
-        background: url('../assets/login-bg.jpg') no-repeat center center fixed;
+    background: url('../assets/login-bg.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -132,18 +132,19 @@ body {
     justify-self: end;
 }
 
-.login-button {
+.login-button-wrapper {
     width: 100%;
     height: 40px;
+}
+
+.login-button {
     background-color: rgb(	59, 107, 231);
     color: white;
-
+    width: 100%;
+    height: 100%;
     border-radius: 20px;
 }
 
 .blue-span-text {
     color: rgb(59, 107, 231);
 }
-
-
-
