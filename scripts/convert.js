@@ -103,5 +103,7 @@ transferButton.addEventListener("click", e => {
         // Update other user account balance + sendAmount
         // Replace alert with transaction page
         alert("Transfer successful!");
+        window.location.href = "../pages/success.html";
     }
 })
+
