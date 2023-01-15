@@ -6,6 +6,7 @@ const cache = window.localStorage;
 const whitelistKey = "whitelisted";
 const currentUserDetailKey = "currentuserdetail";
 const destKey = "destination";
+const sourceKey = "source";
 
 nextButton.addEventListener("click", e => {
     const dest = inputElement.value;
@@ -15,6 +16,7 @@ nextButton.addEventListener("click", e => {
         const currUserAccs = currUserDetails["account_state"];
         const currUserEthAcc = currUserAccs["acc2"];
         const currUserEthAddr = currUserEthAcc["Account"];
+        let currUserSource = currUserAccs.acc1.Account;
         if (dest === currUserEthAddr) {
             alert("You cannot send to your own address!");
         } else {
@@ -23,6 +25,7 @@ nextButton.addEventListener("click", e => {
                 let curr = whitelistDb[user];
                 if (dest === curr) {
                     cache.setItem(destKey, dest);
+                    cache.setItem(sourceKey, currUserSource);
                     shouldAlert = true;
                     window.location.href = "../pages/converter.html";
                 }
@@ -40,6 +43,3 @@ nextButton.addEventListener("click", e => {
         alert("Invalid address!")
     }
 });
-
-console.log(cache.getItem("michew"));
-console.log(cache.getItem("branchi"));

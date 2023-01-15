@@ -10,6 +10,7 @@ const currentUserDetailKey = "currentuserdetail";
 const currentUserKey = "currentuser";
 const destKey = "destination";
 const whitelistKey = "whitelisted";
+const amountKey = "amount";
 
 fetch(`https://api.currencyapi.com/v3/latest?apikey=${appId}`, {
     method: 'GET',
@@ -129,6 +130,7 @@ transferButton.addEventListener("click", e => {
         receiverBalance = (parseFloat(receiverBalance) + finalValue).toFixed(2);
         targetDetailsArr.account_state.acc1.Balance = "$" + receiverBalance;
         cache.setItem(target, JSON.stringify(targetDetailsArr));
+        cache.setItem(amountKey, `$${sendAmount}`);
         window.location.href = "../pages/success.html";
     }
 });
