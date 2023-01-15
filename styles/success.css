@@ -93,3 +93,10 @@ body {
 .clickables > ul {
     padding-left: 0px !important;
 }
+
+.logout-btn {
+    position:relative;
+    color:white;
+    float:inline-end;
+    font-size: 36px;
+}
