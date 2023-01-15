@@ -12,6 +12,31 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@400;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../styles/destination.css">
+    <style>
+        body {
+            font-family: 'Blinker', sans-serif;
+        }
+
+        /* width 
+            ::-webkit-scrollbar {
+                width: 5px;
+            }
+    
+            Track 
+            ::-webkit-scrollbar-track {
+                background: #ADEFD1;
+            }
+            
+            Handle
+            ::-webkit-scrollbar-thumb {
+                background: #030608;
+            }
+    
+            Handle on hover
+            ::-webkit-scrollbar-thumb:hover {
+                background: gray;
+            } */
+    </style>
 </head>
 
 <body>
@@ -30,33 +55,31 @@
             <div class="transfer-details">
                 <div class="bank-account-text">
                     <h2>Bank<br>Account</h2>
-                </div>  
-                    <select class="bank-account-input" aria-label="Default select example">
-                        <option selected>Savings Account 123-45678-9</option>
-                        <option value="1">e Wallet 1 0x690b9a9e9aa1c9db991c7721a92d351db4fac990</option>
-                        <option value="2">Investments 123-45678-9</option>
-                    </select>
-            </div>          
+                </div>
+                <select class="bank-account-input" aria-label="Default select example">
+                    <option selected>Savings Account 123-45678-9</option>
+                    <option value="1">e Wallet 1 0x690b9a9e9aa1c9db991c7721a92d351db4fac990</option>
+                    <option value="2">Investments 123-45678-9</option>
+                </select>
+            </div>
         </div>
     </div>
     <div class="mask">
-        <div class="account-details-wrapper">
+        <div class="account-details-wrapper to">
             <div class="mask-header">
-                <h2>From</h2>
+                <h2>To</h2>
             </div>
             <div class="transfer-details">
                 <div class="bank-account-text">
                     <h2>Bank<br>Account</h2>
-                </div>  
-                    <select class="bank-account-input" aria-label="Default select example">
-                        <option selected>Savings Account 123-45678-9</option>
-                        <option value="1">e Wallet 1 0x690b9a9e9aa1c9db991c7721a92d351db4fac990</option>
-                        <option value="2">Investments 123-45678-9</option>
-                    </select>
-                </div>          
+                </div>
+                    <input class="bank-account-input input-field" id="username" class="field" type="text" placeholder="ENS or Ethereum Address" name="username"
+                        required>
+            </div>
         </div>
     </div>
-
     <button class="next-button" type="button"><strong>Next</strong></button>
+    <script src="../scripts/destination.js"></script>
 </body>
+
 </html>

@@ -1,6 +1,10 @@
 const submitButton = document.querySelector(".register-button");
 let cache = window.localStorage;
 const accountsKey = "accsystem";
+// let Web3 = require("web3");
+// let web3 = new Web3('ws://localhost:8546');
+// let account = web3.eth.accounts.create();
+// console.log(account);
 
 const userDefaultAccounts = {
     account_state : { 
