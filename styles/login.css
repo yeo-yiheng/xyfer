@@ -148,3 +148,9 @@ body {
 .blue-span-text {
     color: rgb(59, 107, 231);
 }
+
+.temp-clear-button{
+    color:rgba(255, 255, 255, 0);
+    border:none;
+    background-color:rgba(102, 98, 98, 0) ;
+}
