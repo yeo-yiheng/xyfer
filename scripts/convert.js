@@ -77,7 +77,7 @@ forms.forEach(form => {
             let exchangeElement = document.querySelector(".exchange-rate");
             let numFloat = toRate / fromRate;
             let division = parseFloat(numFloat.toString()).toFixed(2);
-            exchangeElement.innerHTML = `Exchange Rate: ${division} ${toValue} per 1 ${fromValue}`;
+            exchangeElement.innerHTML = `Exchange Rate: 1 ${fromValue} ≈  ${division} ${toValue}`;
             if (fieldArr.value !== undefined) {
                 let currInput = fieldArr.value;
                 finalValue = (toRate / fromRate) * currInput;

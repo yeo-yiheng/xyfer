@@ -150,3 +150,10 @@ a {
 .footer-wrapper > a:last-child {
     padding-block-end: 12px;
 }
+
+.logout-btn {
+    position:relative;
+    color:white;
+    float:inline-end;
+    font-size: 36px;
+}
