@@ -1,11 +1,21 @@
 
-const appId = 'IqmgcmlID2I3saQUEVaLNaTGRPcERbE2S88MIRYo';
 const forms = document.querySelectorAll(".form-select");
-let data;
 let toField = document.querySelector(".to-input");
 let fieldArr = document.querySelector(".from-input");
 let transferButton = document.querySelector(".transfer-button");
 const cache = window.localStorage;
+
+let data;
+let fromChosen = false;
+let toChosen = false;
+let fromValue;
+let toValue;
+let fromRate;
+let toRate;
+let sendAmount = 0;
+let finalValue = 0;
+
+const appId = 'IqmgcmlID2I3saQUEVaLNaTGRPcERbE2S88MIRYo';
 const currentUserDetailKey = "currentuserdetail";
 const currentUserKey = "currentuser";
 const destKey = "destination";
@@ -31,21 +41,12 @@ fetch(`https://api.currencyapi.com/v3/latest?apikey=${appId}`, {
             if (turn) {
                 form.appendChild(opt1);
             } else {
-                form.appendChild(opt2);
+                form.appendChild(opt2); 
                 turn = true;
             }
         });
     }
 });
-
-let fromChosen = false;
-let toChosen = false;
-let fromValue;
-let toValue;
-let fromRate;
-let toRate;
-let sendAmount = 0;
-let finalValue = 0;
 
 forms.forEach(form => {
     form.addEventListener("change", (event) => {

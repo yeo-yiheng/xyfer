@@ -16,28 +16,7 @@
         body {
             font-family: 'Blinker', sans-serif;
         }
-
-        /* width 
-            ::-webkit-scrollbar {
-                width: 5px;
-            }
-    
-            Track 
-            ::-webkit-scrollbar-track {
-                background: #ADEFD1;
-            }
-            
-            Handle
-            ::-webkit-scrollbar-thumb {
-                background: #030608;
-            }
-    
-            Handle on hover
-            ::-webkit-scrollbar-thumb:hover {
-                background: gray;
-            } */
     </style>
-    <!-- placeholder image used -->
 </head>
 
 <body>
@@ -46,46 +25,45 @@
             <a class="navbar-name">Xyfer Gateway</a>
         </div>
     </nav>
-        <div class="background-wrapper">
-            <div class="content-wrapper">
-                <a class="back-button" href="javascript:history.back()"></a>
-                <div class="process-wrapper">
-                    <p>You're sending </p>
-                    <div class="input-wrapper">
-                        <div class="field-wrapper">
-                            <input id="number" class="field from-input" type="number" min="0" pattern="[0-9]+" placeholder="Enter amount" name="username"
-                                required style="padding:5px">
-                        </div>
-                    </div>
-                    <div class="fromdrop-box">
-                        <select class="form-select from" aria-label="Default select example" fdprocessedid="nmxspb">
-                            <option selected="">Select Currency</option>
-                        </select>
+    <div class="background-wrapper">
+        <div class="content-wrapper">
+            <a class="back-button" href="javascript:history.back()"></a>
+            <div class="process-wrapper">
+                <p>You're sending </p>
+                <div class="input-wrapper">
+                    <div class="field-wrapper">
+                        <input id="number" class="field from-input" type="number" min="0" pattern="[0-9]+"
+                            placeholder="Enter amount" name="username" required>
                     </div>
                 </div>
-
-                <div class="process-wrapper">
-                    <p>to </p>
-                    <div class="input-wrapper">
-                        <div class="field-wrapper">
-                            <input id="number" class="field to-input" type="number" placeholder="Final Amount" name="username"
-                                disabled style="padding:5px">
-                        </div>
-                    </div>
-                    <div class="todrop-box">
-                        <select class="form-select to" aria-label="Default select example" fdprocessedid="nmxspb">
-                            <option selected="">Select Currency</option>
-                        </select>
-
-                    </div>
+                <div class="fromdrop-box">
+                    <select class="form-select from" aria-label="Default select example" fdprocessedid="nmxspb">
+                        <option selected="">Select Currency</option>
+                    </select>
                 </div>
-                <div class="exchangerate-wrapper">
-                    <p class="exchange-rate">Exchange Rate</p>
-                </div>
-                <button class="transfer-button" type="button">Transfer</button>
             </div>
+
+            <div class="process-wrapper">
+                <p>to </p>
+                <div class="input-wrapper">
+                    <div class="field-wrapper">
+                        <input id="number" class="field to-input" type="number" placeholder="Final Amount"
+                            name="username" disabled>
+                    </div>
+                </div>
+                <div class="todrop-box">
+                    <select class="form-select to" aria-label="Default select example" fdprocessedid="nmxspb">
+                        <option selected="">Select Currency</option>
+                    </select>
+                </div>
+            </div>
+            <div class="exchangerate-wrapper">
+                <p class="exchange-rate">Exchange Rate</p>
+            </div>
+            <button class="transfer-button" type="button">Transfer</button>
         </div>
-        <script src="../scripts/convert.js" defer></script>
+    </div>
+    <script src="../scripts/convert.js" defer></script>
 </body>
 
 </html>

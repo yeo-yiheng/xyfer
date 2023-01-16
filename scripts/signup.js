@@ -1,8 +1,9 @@
 const submitButton = document.querySelector(".register-button");
 let cache = window.localStorage;
+let newAddress;
+
 const accountsKey = "accsystem";
 const whitelistKey = "whitelisted";
-let newAddress;
 
 $.ajax({
     type: 'get',
@@ -34,9 +35,7 @@ const userDefaultAccounts = {
 }
 
 if (cache.getItem(accountsKey) === null) {
-    const accounts = {
-        testAccount : "testPassword"
-    };
+    const accounts = { testAccount : "testPassword" };
     cache.setItem(accountsKey, JSON.stringify(accounts));
 }
 
@@ -50,18 +49,22 @@ if (cache.getItem(whitelistKey) === null) {
 submitButton.addEventListener("click", (event) => {
     const usernameInput = document.getElementById("username").value;
     const passwordInput = document.getElementById("password").value;
+    // Username or password is blank
     if (usernameInput.length === 0 || passwordInput.length === 0) {
         alert("Username or Password cannot be blank!");
     } else {
         let userdb = JSON.parse(cache.getItem(accountsKey));
+        // Username is taken
         if (userdb[usernameInput] !== undefined) {
             alert("User already exists!");
+            // Password is not at least 8 characters in length
         } else if (passwordInput.length < 8) {
             alert("Password has to be at least 8 characters long!");
         } else {
             userdb[usernameInput] = passwordInput;
             cache.setItem(accountsKey, JSON.stringify(userdb));
-            cache.setItem(usernameInput, JSON.stringify(userDefaultAccounts));
+            cache.setItem(usernameInput, JSON.stringify(userDefaultAccounts)); // Key: Username, Value: User account details
+
             let whitelistedDb = JSON.parse(cache.getItem(whitelistKey));
             whitelistedDb[usernameInput] = newAddress;
             cache.setItem(whitelistKey, JSON.stringify(whitelistedDb));

@@ -16,28 +16,7 @@
         body {
             font-family: 'Blinker', sans-serif;
         }
-
-        /* width 
-            ::-webkit-scrollbar {
-                width: 5px;
-            }
-    
-            Track 
-            ::-webkit-scrollbar-track {
-                background: #ADEFD1;
-            }
-            
-            Handle
-            ::-webkit-scrollbar-thumb {
-                background: #030608;
-            }
-    
-            Handle on hover
-            ::-webkit-scrollbar-thumb:hover {
-                background: gray;
-            } */
     </style>
-    <!-- placeholder image used -->
 </head>
 
 <body>
@@ -56,7 +35,8 @@
             <div class="login-wrapper">
                 <button class="temp-clear-button">Clear DB</button>
                 <div class="field-wrapper">
-                    <input id="username" class="field" type="text" placeholder="Email or phone number" name="username" required>
+                    <input id="username" class="field" type="text" placeholder="Email or phone number" name="username"
+                        required>
                 </div>
                 <div class="field-wrapper">
                     <input id="password" class="field" type="password" placeholder="Password" name="password" required>
@@ -65,38 +45,15 @@
                 <a href="" class="forget-password-cta">
                     <p>Forgot Password?</p>
                 </a>
-                <!-- <a href="../pages/dashboard.html" class="login-button-wrapper"> -->
-                    <button class="login-button" type="button">Login</button>
-                <!-- </a> -->
-                    <!-- <div class="d-grid gap-2 col-12 mx-auto">
-                        <button class="btn btn-primary" type="button">Login</button>
-                    </div> -->
-                <p class="sign-up-cta">Don't have an account? <a href="../pages/signup.html"><span class="blue-span-text">Sign
+                <button class="login-button" type="button">Login</button>
+                <p class="sign-up-cta">Don't have an account? <a href="../pages/signup.html"><span
+                            class="blue-span-text">Sign
                             up!</span></a></p>
             </div>
         </div>
     </div>
     <script src="../scripts/login.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
-    <script>
-        const swiper = new Swiper('.swiper', {
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-            loop: true,
-
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-
-            navigation: {
-                nextEl: '.swiper-button-next',
-                prevEl: '.swiper-button-prev',
-            }
-        });
-    </script>
 </body>
 
 </html>
