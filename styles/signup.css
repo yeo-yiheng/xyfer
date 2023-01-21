@@ -122,10 +122,24 @@ body {
     border-radius: 20px;
 }
 
+.back-button {
+    width: 20%;
+    height: 40px;
+    background-color: rgb(	59, 107, 231);
+    color: white;
+    border-radius: 20px;
+}
+
 .blue-span-text {
     color: rgb(59, 107, 231);
 }
 
 .register-desc {
     color: black;
+}
+
+.buttons {
+    width: 100%;
+    display: flex;
+    gap: 30px;
 }
