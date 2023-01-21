@@ -9,7 +9,7 @@ The source code within this repository contains a simulation user experience for
 
 To play around with our prototype, follow the steps below to set up your executing environment.
 
-1. Ensure that you have NodeJS installed. Follow the [link](https://nodejs.org/en/download/) for more instructions.
+1. Ensure that you have NodeJS and npm installed. Follow the [link](https://nodejs.org/en/download/) for more instructions.
 
 2. Download the source code into your local directory.
 
@@ -21,11 +21,15 @@ To play around with our prototype, follow the steps below to set up your executi
 
 6. Run `npm i ethers`
 
-7. Run `node address.js`
+7. Run `npm install mongodb`
 
-8. Pop the login.html file path into your browser, and play around for a simulated experience.
+8. Run `node address.js`
 
-_Disclaimer: The prototype is still a work-in-progress and you may encounter some errors or unexpected behavior._
+9. Pop the login.html file path into your browser, and play around for a simulated experience.
+
+_Disclaimers:_ 
+1. _The prototype is still a work-in-progress and you may encounter some errors or unexpected behavior._
+2. _We employ MongoDB DBMS for our backend database and this requires IP whitelisting on your local host to connect. Thus, self-simulation is temporarily unavailable until we deploy our solution onto a cloud server. To view the experience, do check out our simulated demo video on our project homepage._
 
 ## Final Solution
 ---
@@ -58,7 +62,7 @@ The only thing that consumers have to do is to obtain the respective Ethereum wa
 ## Tech Stack
 ---
 
-Our prototype tech stack consists of HTML, CSS, JavaScript and Bootstrap for the client-side, and NodeJS and the relevant JavaScript libraries for the server-side. 
+Our prototype tech stack consists of HTML, CSS, JavaScript and Bootstrap for the client-side, and NodeJS, MongoDB, and the relevant JavaScript libraries for the server-side. 
 
 Given more time and research, we would be transitioning our tech stack into using more robust frameworks like React, as well as incorporating secure databases and authentication systems. We would also fully build out our API endpoints for simple bank integration. 
 
