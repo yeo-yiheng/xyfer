@@ -31,9 +31,11 @@ To play around with our prototype, follow the steps below to set up your executi
 
 11. Run `npm install solc`
 
-12. Run `node address.js`
+12. Run `npm install web3`
 
-13. Pop the login.html file path into your browser, and play around for a simulated experience. 
+13. Run `node address.js`
+
+14. Pop the login.html file path into your browser, and play around for a simulated experience. 
 
 _Disclaimers:_ 
 1. _The prototype is still a work-in-progress and you may encounter some errors or unexpected behavior._
