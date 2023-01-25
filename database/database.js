@@ -1,9 +1,8 @@
 const {MongoClient} = require('mongodb');
 const bankAddresses = "bank_addresses";
-const password = "Wqed6i6cOyCSSrED";
 
 async function init() {
-    const uri = `mongodb+srv://xyfer:${password}@xyfer.gsxxjli.mongodb.net/test`;
+    const uri = `mongodb+srv://xyfer:${process.env.DB_PW}@xyfer.gsxxjli.mongodb.net/test`;
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
     try {
         await client.connect();
@@ -104,6 +103,36 @@ async function createCollection(db_name, collection_name) {
     }
 }
 
+async function queryCollectionAll(query, options, db_name, collection_name, index) {
+    const client = await init();
+    let res;
+    try {
+        const database = client.db(db_name);
+        const collection = database.collection(collection_name);
+        if (options == null) {
+            await collection.find(query). forEach(item => {
+                if (index == 0) {
+                    res = item;        
+                }
+                index--;
+            });
+        } else {
+            await collection.find(query, options).forEach(item => {
+                if (index == 0) {
+                    res = item;
+                }
+                index--;
+            });
+        }
+        console.log("Returning : " + res);
+    } catch(e) {
+        console.log(e);
+    } finally {
+        await client.close();
+        return res;
+    }
+}
+
 async function queryCollection(query, options, db_name, collection_name) {
     const client = await init();
     try {
@@ -130,5 +159,6 @@ module.exports = {
     createCollection,
     createDatabase,
     queryCollection,
+    queryCollectionAll,
     updateDocument
 };

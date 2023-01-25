@@ -8,38 +8,51 @@ const currentUserKey = "currentuser";
 const destKey = "destination";
 const sourceKey = "source";
 
+let tmp = document.createElement('div');
+let loader = `<div id="loading-wrapper">
+            <div id="loading-text">LOADING</div>
+            <div id="loading-content"></div>
+         </div>`;
+tmp.innerHTML = loader;
+let background = document.querySelector('.mask');
+
 nextButton.addEventListener("click", e => {
     const dest = inputElement.value;
     // If valid ETH address
     if (dest.match(addressPattern)) {
-        $.ajax({
-            method: 'POST',
-            async: false,
-            url: 'http://localhost:3000/verify-whitelisted-address',
-            data: { 
-                address : dest,
-                username : cache[currentUserKey]
-            },
-            success: function (data) {
-                $.ajax({
-                    type: 'get',
-                    async: false,
-                    url: 'http://localhost:3000/retrieve-my-address',
-                    success: function (data) {
-                        cache.setItem(destKey, dest);
-                        cache.setItem(sourceKey, data);     
-                        window.location.href = "../pages/converter.html";
+        background.appendChild(tmp);
+        setTimeout(() => {
+            $.ajax({
+                method: 'POST',
+                async: false,
+                url: 'http://localhost:3000/verify-whitelisted-address',
+                data: { 
+                    address : dest,
+                    username : cache[currentUserKey]
+                },
+                success: function (data) {
+                    $.ajax({
+                        type: 'get',
+                        async: false,
+                        url: 'http://localhost:3000/retrieve-my-address',
+                        success: function (data) {
+                            background.removeChild(tmp);
+                            cache[destKey] = dest;
+                            cache[sourceKey] = data;  
+                            window.location.href = "../pages/converter.html";
+                        }
+                    });
+                },
+                error: function (data) {
+                    background.removeChild(tmp);
+                    if (data['status'] == 400) {
+                        alert("Address is not whitelisted!");
+                    } else {
+                        alert("You cannot send to your own address");
                     }
-                });
-            },
-            error: function (data) {
-                if (data['status'] == 400) {
-                    alert("Address is not whitelisted!");
-                } else {
-                    alert("You cannot send to your own address");
                 }
-            }
-        });
+            });
+        }, 1000)
     } else {
         alert("Invalid address format!")
     }

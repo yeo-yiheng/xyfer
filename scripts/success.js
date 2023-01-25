@@ -13,3 +13,7 @@ let amountElement = document.querySelector(".amount-data");
 fromElement.innerHTML = source;
 toElement.innerHTML = dest;
 amountElement.innerHTML = amt;
+
+for (var i = 0; i < localStorage.length; i++){
+    console.log(`${localStorage.key(i)} is ${localStorage.getItem(localStorage.key(i))}`);
+}
