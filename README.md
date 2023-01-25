@@ -23,13 +23,22 @@ To play around with our prototype, follow the steps below to set up your executi
 
 7. Run `npm install mongodb`
 
-8. Run `node address.js`
+8. Run `npm install dotenv --save`, .env file details can be obtained from the team
 
-9. Pop the login.html file path into your browser, and play around for a simulated experience.
+9. Run `npm install ethereumjs-tx`
+
+10. Run `npm install --save-dev @openzeppelin/contracts`
+
+11. Run `npm install solc`
+
+12. Run `node address.js`
+
+13. Pop the login.html file path into your browser, and play around for a simulated experience. 
 
 _Disclaimers:_ 
 1. _The prototype is still a work-in-progress and you may encounter some errors or unexpected behavior._
-2. _We employ MongoDB DBMS for our backend database and this requires IP whitelisting on your local host to connect. Thus, self-simulation is temporarily unavailable until we deploy our solution onto a cloud server. To view the experience, do check out our simulated demo video on our project homepage._
+2. _We employ MongoDB DBMS for our backend database and this requires IP whitelisting on your local host to connect. Thus, self-simulation is temporarily unavailable until we deploy our solution onto a cloud server. To view the experience, do check out our simulated demo video on our project homepage._ 
+3. _You can install all packages at once using npm. We broke it up into steps to allow an entire overview of the packages required._
 
 ## Final Solution
 ---
@@ -43,9 +52,9 @@ Our final solution prioritizes two stakeholders within the industry.
 
 The banks will connect to our API endpoints which functions as a **redirect gateway** where the magic of the overseas transfer happens. The banks are also required to have **USDT** and **Native Currency** reserves which must be maintained once every fixed time period.
 
-Banks are required to use **Know Your Customer (KYC)** protocols in order to generate and whitelist their consumers Ethereum addresses. These Ethereum addresses are entirely controlled by the banks, and are by no means directly accessible to consumers except being used as a proxy wallet during the transfer of overseas funds.
+Banks are required to use **Know Your Customer (KYC)** protocols in order to generate and whitelist their consumers Ethereum addresses. These Ethereum addresses are entirely controlled by us, and are by no means directly accessible to consumers except being used as a proxy wallet during the transfer of overseas funds.
 
-The main mode of transfer would be through **ERC20 stablecoins** like USDT. This is to provide **price stability** and **lower risks** to the ecosystem.
+The main mode of transfer would be through **ERC20 stablecoins** like USDT. This is to provide **price stability** and **lower risks** to the ecosystem. However, our implementation employs the use of our own token Xyfer (XFR) since we deployed our prototype on the Goerli Testnet. 
 
 When a consumer makes an overseas transfer, their funds will be deposited into the bank's native currency reserves which triggers a smart contract to immediately facilitate a transfer from the bank's USDT reserves to the recipient's wallet address. 
 

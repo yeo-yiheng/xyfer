@@ -20,6 +20,7 @@ const appId = "85cuBq0REBEVpoFEqGA8cid3yPyCKKkdAADrOazn"; // Should do server si
 const currentUserKey = "currentuser";
 const destKey = "destination";
 const amountKey = "amount";
+const hashKey = "hash";
 
 let tmp = document.createElement('div');
 let loader = `<div id="loading-wrapper">
@@ -188,6 +189,7 @@ transferButton.addEventListener("click", e => {
                                 },
                                 success: function(data) {
                                     console.log(data);
+                                    cache.setItem(hashKey, data);
                                 }
                             });
                             background.removeChild(tmp);
